@@ -1,0 +1,11 @@
+<h2>Album list</h2>
+<fieldset>
+  <input [(ngModel)]="newAlbum" type="text" placeholder="Type your title...">
+  <button (click)="addAlbum()">Add Album</button>
+</fieldset>
+<ul>
+  <li *ngFor="let album of albums">
+    <a [routerLink]="['/albums', album.id]">{{album.id}}) {{album.title}}</a>
+    <button (click)="deleteAlbum(album.id)">delete</button>
+  </li>
+</ul>
